@@ -14,7 +14,6 @@ E:\ground\AspDotNet\GrpcService1\GrpcService1\bin\Debug\netcoreapp3.1\Grpc.Core.
 E:\ground\AspDotNet\GrpcService1\GrpcService1\bin\Debug\netcoreapp3.1\Grpc.Net.Client.dll
 E:\ground\AspDotNet\GrpcService1\GrpcService1\bin\Debug\netcoreapp3.1\Grpc.Net.ClientFactory.dll
 E:\ground\AspDotNet\GrpcService1\GrpcService1\bin\Debug\netcoreapp3.1\Grpc.Net.Common.dll
-E:\ground\AspDotNet\GrpcService1\GrpcService1\obj\Debug\netcoreapp3.1\GrpcService1.csprojAssemblyReference.cache
 E:\ground\AspDotNet\GrpcService1\GrpcService1\obj\Debug\netcoreapp3.1\staticwebassets\GrpcService1.StaticWebAssets.Manifest.cache
 E:\ground\AspDotNet\GrpcService1\GrpcService1\obj\Debug\netcoreapp3.1\staticwebassets\GrpcService1.StaticWebAssets.xml
 E:\ground\AspDotNet\GrpcService1\GrpcService1\obj\Debug\netcoreapp3.1\GrpcService1.MvcApplicationPartsAssemblyInfo.cache
