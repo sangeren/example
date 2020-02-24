@@ -17,6 +17,7 @@ namespace GrpcService1
 
         public override Task<HelloReply> SayHello(HelloRequest request, ServerCallContext context)
         {
+            decimal d = request.Price;
             return Task.FromResult(new HelloReply
             {
                 Message = "Hello " + request.Name

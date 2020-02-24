@@ -24,14 +24,16 @@ namespace GrpcService1 {
     static GreetReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJQcm90b3MvZ3JlZXQucHJvdG8SBWdyZWV0IhwKDEhlbGxvUmVxdWVzdBIM",
-            "CgRuYW1lGAEgASgJIh0KCkhlbGxvUmVwbHkSDwoHbWVzc2FnZRgBIAEoCTI9",
-            "CgdHcmVldGVyEjIKCFNheUhlbGxvEhMuZ3JlZXQuSGVsbG9SZXF1ZXN0GhEu",
-            "Z3JlZXQuSGVsbG9SZXBseUIPqgIMR3JwY1NlcnZpY2UxYgZwcm90bzM="));
+            "ChJQcm90b3MvZ3JlZXQucHJvdG8SBWdyZWV0GhNQcm90b3MvYmFza2V0LnBy",
+            "b3RvIj8KDEhlbGxvUmVxdWVzdBIMCgRuYW1lGAEgASgJEiEKBXByaWNlGAIg",
+            "ASgLMhIuQmFza2V0QXBpLkRlY2ltYWwiHQoKSGVsbG9SZXBseRIPCgdtZXNz",
+            "YWdlGAEgASgJMj0KB0dyZWV0ZXISMgoIU2F5SGVsbG8SEy5ncmVldC5IZWxs",
+            "b1JlcXVlc3QaES5ncmVldC5IZWxsb1JlcGx5Qg+qAgxHcnBjU2VydmljZTFi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::Basket.API.Proto.BasketReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcService1.HelloRequest), global::GrpcService1.HelloRequest.Parser, new[]{ "Name" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcService1.HelloRequest), global::GrpcService1.HelloRequest.Parser, new[]{ "Name", "Price" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcService1.HelloReply), global::GrpcService1.HelloReply.Parser, new[]{ "Message" }, null, null, null)
           }));
     }
@@ -68,6 +70,7 @@ namespace GrpcService1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public HelloRequest(HelloRequest other) : this() {
       name_ = other.name_;
+      price_ = other.price_ != null ? other.price_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -87,6 +90,17 @@ namespace GrpcService1 {
       }
     }
 
+    /// <summary>Field number for the "price" field.</summary>
+    public const int PriceFieldNumber = 2;
+    private global::Basket.API.Proto.Decimal price_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Basket.API.Proto.Decimal Price {
+      get { return price_; }
+      set {
+        price_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as HelloRequest);
@@ -101,6 +115,7 @@ namespace GrpcService1 {
         return true;
       }
       if (Name != other.Name) return false;
+      if (!object.Equals(Price, other.Price)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -108,6 +123,7 @@ namespace GrpcService1 {
     public override int GetHashCode() {
       int hash = 1;
       if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (price_ != null) hash ^= Price.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -125,6 +141,10 @@ namespace GrpcService1 {
         output.WriteRawTag(10);
         output.WriteString(Name);
       }
+      if (price_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Price);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -135,6 +155,9 @@ namespace GrpcService1 {
       int size = 0;
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (price_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Price);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -150,6 +173,12 @@ namespace GrpcService1 {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
+      if (other.price_ != null) {
+        if (price_ == null) {
+          Price = new global::Basket.API.Proto.Decimal();
+        }
+        Price.MergeFrom(other.Price);
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -163,6 +192,13 @@ namespace GrpcService1 {
             break;
           case 10: {
             Name = input.ReadString();
+            break;
+          }
+          case 18: {
+            if (price_ == null) {
+              Price = new global::Basket.API.Proto.Decimal();
+            }
+            input.ReadMessage(Price);
             break;
           }
         }

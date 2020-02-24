@@ -1,2 +1,1 @@
-obj\Debug\netcoreapp3.1/Basket.cs \
-obj\Debug\netcoreapp3.1/BasketGrpc.cs: Protos/basket.proto
+obj\Debug\netcoreapp3.1/Basket.cs: Protos/basket.proto
